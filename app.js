@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-  User.findById('5eb276dae0340ce79ba38fd1')
+  User.findById('5eb3f790b35195e67e4840e9')
     .then(user => {
       req.user = new User(user.name, user.email, user.cart, user._id);
       next();
@@ -33,11 +33,7 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
+mongoConnect(() => {
+  app.listen(3000);
+});
 
-//mongoConnect(() => {
-  const port = process.env.PORT || 5000;
-  const host = '0.0.0.0';
-  app.listen(port, host, function() {
-    console.log("Server started.......");
-  });
-//});
