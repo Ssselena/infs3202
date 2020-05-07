@@ -35,7 +35,7 @@ app.use(errorController.get404);
 
 
 mongoConnect(() => {
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 5000;
   const host = '0.0.0.0';
   app.listen(port, host, function() {
     console.log("Server started.......");
