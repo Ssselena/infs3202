@@ -2,7 +2,8 @@
   "name": "infs3202",
   "version": "1.0.0",
   "engines": {
-    "node": "13.1.0"
+    "node": "13.1.0",
+    "npm": "6.12.1"
     },
   "description": "INFS3202",
   "main": "app.js",
