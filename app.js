@@ -34,6 +34,6 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoConnect(() => {
-  app.listen(process.env.PORT);
+  app.listen(process.env.PORT || 3000);
 });
 
